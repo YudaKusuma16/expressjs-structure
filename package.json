@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "jest"
   },
   "repository": {
@@ -19,11 +20,15 @@
   },
   "homepage": "https://github.com/geshan/expressjs-structure#readme",
   "dependencies": {
+    "dotenv": "^17.3.1",
+    "ejs": "^4.0.1",
     "express": "^4.17.1",
-    "mysql2": "^2.3.3"
+    "express-session": "^1.19.0",
+    "mysql2": "^3.17.2"
   },
   "devDependencies": {
-    "jest": "^27.4.5"
+    "jest": "^25.0.0",
+    "nodemon": "^3.1.11"
   },
   "jest": {
     "testEnvironment": "node",

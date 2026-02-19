@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<%- include('../partials/header') %>
+
+  <main class="container product-detail">
+    <a href="/" class="back-link">&larr; Back to Products</a>
+
+    <div class="product-detail-card">
+      <div class="product-image">
+        <% if (product.image) { %>
+          <img src="<%= product.image %>" alt="<%= product.name %>">
+          <% } else { %>
+            <div class="product-placeholder">No Image</div>
+            <% } %>
+      </div>
+      <div class="product-details">
+        <h1>
+          <%= product.name %>
+        </h1>
+        <p class="product-price">
+          <%= parseFloat(product.price).toFixed(2) %>
+        </p>
+        <p class="stock-status">Stock: <%= product.stock %> available</p>
+        <div class="description">
+          <h3>Description</h3>
+          <p>
+            <%= product.description || 'No description available' %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%- include('../partials/footer') %>
+</body>
+</html>
